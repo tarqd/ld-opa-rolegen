@@ -1,0 +1,20 @@
+[
+  {
+    "actions": [
+      "viewProject"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname"
+    ]
+  },
+  {
+    "actions": [
+      "createApprovalRequest"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*:flag/*"
+    ]
+  }
+]

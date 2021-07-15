@@ -1,0 +1,11 @@
+[
+  {
+    "actions": [
+      "reviewApprovalRequest"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/test:flag/*"
+    ]
+  }
+]

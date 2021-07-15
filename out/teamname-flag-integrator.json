@@ -1,0 +1,38 @@
+[
+  {
+    "actions": [
+      "viewProject"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname"
+    ]
+  },
+  {
+    "actions": [
+      "updateTriggers"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*:flag/*"
+    ]
+  },
+  {
+    "actions": [
+      "updateTriggers"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:flag/*"
+    ]
+  },
+  {
+    "actions": [
+      "updateTriggers"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/test:flag/*"
+    ]
+  }
+]

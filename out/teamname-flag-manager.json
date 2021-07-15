@@ -1,0 +1,26 @@
+[
+  {
+    "actions": [
+      "viewProject"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname"
+    ]
+  },
+  {
+    "actions": [
+      "createFlag",
+      "cloneFlag",
+      "updateName",
+      "updateDescription",
+      "updateFlagCustomProperties",
+      "updateMaintainer",
+      "updateFlagDefaultVariations"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*:flag/*"
+    ]
+  }
+]

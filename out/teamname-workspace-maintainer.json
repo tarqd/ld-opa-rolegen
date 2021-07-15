@@ -1,0 +1,30 @@
+[
+  {
+    "actions": [
+      "createProject",
+      "updateProjectName",
+      "updateTags",
+      "updateIncludeInSnippetByDefault",
+      "updateDefaultClientSideAvailability",
+      "viewProject"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname"
+    ]
+  },
+  {
+    "actions": [
+      "createEnvironment",
+      "updateName",
+      "updateColor",
+      "updateTtl",
+      "updateDefaultTrackEvents",
+      "updateTags"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*"
+    ]
+  }
+]

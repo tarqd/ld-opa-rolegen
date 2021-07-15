@@ -1,0 +1,13 @@
+[
+  {
+    "actions": [
+      "reviewApprovalRequest",
+      "updateApprovalRequest",
+      "deleteApprovalRequest"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:flag/*"
+    ]
+  }
+]

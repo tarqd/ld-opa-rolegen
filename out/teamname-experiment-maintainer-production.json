@@ -1,0 +1,13 @@
+[
+  {
+    "actions": [
+      "updateExperimentActive",
+      "updateTrackEvents",
+      "updateFlagFallthroughTrackEvents"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:flag/*"
+    ]
+  }
+]

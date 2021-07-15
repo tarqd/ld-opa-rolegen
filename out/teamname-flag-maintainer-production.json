@@ -1,0 +1,61 @@
+[
+  {
+    "actions": [
+      "createSegment",
+      "deleteSegment",
+      "updateIncluded",
+      "updateExcluded",
+      "updateRules",
+      "updateExpiringRules",
+      "updateExpiringTargets",
+      "updateScheduledChanges",
+      "updateName",
+      "updateDescription",
+      "updateTags"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:segment/*"
+    ]
+  },
+  {
+    "actions": [
+      "updateOn",
+      "updatePrerequisites",
+      "updateTargets",
+      "updateRules",
+      "updateFlagRuleDescription",
+      "updateFallthrough",
+      "updateOffVariation",
+      "updateExpiringRules",
+      "updateExpiringTargets",
+      "copyFlagConfigFrom",
+      "copyFlagConfigTo",
+      "updateFeatureWorkflows",
+      "updateScheduledChanges",
+      "applyApprovalRequest",
+      "reviewApprovalRequest",
+      "updateApprovalRequest",
+      "deleteApprovalRequest"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:flag/*"
+    ]
+  },
+  {
+    "actions": [
+      "createFlag",
+      "cloneFlag",
+      "updateName",
+      "updateDescription",
+      "updateFlagCustomProperties",
+      "updateMaintainer",
+      "updateFlagDefaultVariations"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*:flag/*"
+    ]
+  }
+]

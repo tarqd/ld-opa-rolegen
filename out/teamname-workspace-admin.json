@@ -1,0 +1,37 @@
+[
+  {
+    "actions": [
+      "createProject",
+      "deleteProject",
+      "updateProjectName",
+      "updateTags",
+      "updateIncludeInSnippetByDefault",
+      "updateDefaultClientSideAvailability",
+      "viewProject"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname"
+    ]
+  },
+  {
+    "actions": [
+      "createEnvironment",
+      "deleteEnvironment",
+      "updateName",
+      "updateColor",
+      "updateTtl",
+      "updateApiKey",
+      "updateMobileKey",
+      "updateSecureMode",
+      "updateDefaultTrackEvents",
+      "updateTags",
+      "updateRequireComments",
+      "updateConfirmChanges"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/*"
+    ]
+  }
+]
