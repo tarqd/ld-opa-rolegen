@@ -1,0 +1,11 @@
+[
+  {
+    "actions": [
+      "updateTriggers"
+    ],
+    "effect": "allow",
+    "resources": [
+      "proj/*;teamname:env/production:flag/*"
+    ]
+  }
+]
