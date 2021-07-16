@@ -42,20 +42,5 @@
     "resources": [
       "proj/*;teamname:env/production:flag/*"
     ]
-  },
-  {
-    "actions": [
-      "createFlag",
-      "cloneFlag",
-      "updateName",
-      "updateDescription",
-      "updateFlagCustomProperties",
-      "updateMaintainer",
-      "updateFlagDefaultVariations"
-    ],
-    "effect": "allow",
-    "resources": [
-      "proj/*;teamname:env/*:flag/*"
-    ]
   }
 ]

@@ -1,15 +1,6 @@
 [
   {
     "actions": [
-      "viewProject"
-    ],
-    "effect": "allow",
-    "resources": [
-      "proj/*;teamname"
-    ]
-  },
-  {
-    "actions": [
       "createFlag",
       "cloneFlag",
       "updateName",

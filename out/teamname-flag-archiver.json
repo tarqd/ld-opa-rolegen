@@ -1,24 +1,6 @@
 [
   {
     "actions": [
-      "viewProject"
-    ],
-    "effect": "allow",
-    "resources": [
-      "proj/*;teamname"
-    ]
-  },
-  {
-    "actions": [
-      "updateGlobalArchived"
-    ],
-    "effect": "allow",
-    "resources": [
-      "proj/*;teamname:env/*:flag/*"
-    ]
-  },
-  {
-    "actions": [
       "updateGlobalArchived"
     ],
     "effect": "allow",

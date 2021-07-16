@@ -22,86 +22,7 @@ workspace_selector[workspace] = selector {
     selector := concat(";", ["proj/*", workspace])
 }
 
-allow[action] {
-    input.role = "release-manager"
-    policy.flag_maintainer.allow[action]
-}
 
-allow[action] {
-    input.role = "flag-maintainer"
-    policy.flag_maintainer.allow[action]
-}
-
-allow[action] {
-    input.role = "flag-maintainer"
-    policy.flag_manager.allow[action]
-}
-
-
-allow[action] {
-    input.role == "workspace-admin"
-    policy.workspace_admin.allow[action]
-}
-
-allow[action] {
-    input.role == "workspace-maintainer"
-    policy.workspace_maintainer.allow[action]
-}
-
-allow[action] {
-    input.role == "project-maintainer"
-    policy.flag_archiver.allow[action]
-    
-}
-allow[action] {
-    input.role == "project-maintainer"
-    policy.flag_integrator.allow[action]
-    
-}
-
-allow[action] {
-    input.kind == "project"
-    input.role == "project-maintainer"
-    data.launchdarkly.project.actions[action]
-    not data.launchdarkly.project.impacts_existing_flags[action]
-    not action == "createProject"
-}
-allow[action] {
-    input.kind == "env"
-    input.role == "project-maintainer"
-    data.launchdarkly.env.actions[action]
-    not data.launchdarkly.env.impacts_evaluation[action]
-    not data.launchdarkly.env.impacts_audit_log[action]
-    not action == "createEnvironment"
-}
-allow[action] {
-    input.kind == "flag"
-    input.role == "project-maintainer"
-    data.launchdarkly.flag.actions[action]
-    not data.flag.approval_actions[action]
-    not data.flag.impacts_evaluation[action]
-}
-
-
-
-
-allow[action] {
-    input.kind == "project"
-    data.launchdarkly.project.actions[action]
-    action == "viewProject"
-    except := {
-        "integration-admin", "relay-admin"
-    }
-    not except[input.role]
-}
-
-
-allow[action] {
-    input.role == "member"
-    input.kind == "flag"
-    data.flag.approval_actions[action]
-    action == "createApprovalRequest"
-}
 
 
 integration_resources := {"code-reference-repository", "integration", "webhook", "relay-proxy-autoconfig"}
@@ -234,8 +155,8 @@ per_env := {
     "flag-maintainer",
     "experiment-maintainer",
     "flag-approver",
-    "flag-reviewer"
-    
+    "flag-reviewer",
+    "flag-integrator"
 }
 
 workspace_roles[workspace] = x {
@@ -275,7 +196,7 @@ workspace_role_statement[[workspace, role, selector, actions]] {
     not all_env[role]
     not count(actions) == 0
 }
-all_env := {"member", "project-maintainer", "workspace-maintainer", "workspace-admin", "experiment-manager", "flag-manager"}
+all_env := {"member", "project-maintainer", "workspace-maintainer", "workspace-admin", "experiment-manager", "flag-manager", "flag-archiver"}
 workspace_role_statement[[workspace, role, selector, actions]] {
     roles[role]
     [workspace, resource, selector, env] := workspace_resource_selector[_]
